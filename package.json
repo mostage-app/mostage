@@ -67,7 +67,9 @@
     "test:ui": "vitest --ui",
     "lint": "eslint src --ext ts,tsx",
     "format": "prettier --write src/**/*.{ts,tsx,css}",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "release:npm": "changeset publish --registry=https://registry.npmjs.org",
+    "release:github": "changeset publish --registry=https://npm.pkg.github.com"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
