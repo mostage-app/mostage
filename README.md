@@ -1,7 +1,7 @@
 # Mostage
 
 [![npm version](https://img.shields.io/npm/v/mostage.svg)](https://www.npmjs.com/package/mostage)
-[![Publish Package](https://github.com/mirmousaviii/mostage/actions/workflows/publish.yml/badge.svg)](https://github.com/mirmousaviii/mostage/actions/workflows/publish.yml)
+[![Publish Package](https://github.com/mostage-app/mostage/actions/workflows/publish.yml/badge.svg)](https://github.com/mostage-app/mostage/actions/workflows/publish.yml)
 
 Presentation framework based on **Markdown** and **HTML** (Core Library + CLI)
 

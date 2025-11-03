@@ -38,7 +38,7 @@ When you push changes to the main branch, two workflows run automatically:
 #### 2. **GitHub Pages Deployment** (`deploy-pages.yml`)
 
 - **Builds demo** - Runs `npm run build:demo` to build the demo
-- **Deploys to GitHub Pages** - Makes the demo available at `https://mirmousaviii.github.io/mostage/`
+- **Deploys to GitHub Pages** - Makes the demo available at `https://mostage.app/demo`
 
 ### Publishing a new version
 
@@ -263,6 +263,6 @@ export class YourPlugin {
 
 ### Getting Help
 
-- Check existing [Issues](https://github.com/mirmousaviii/mostage/issues)
+- Check existing [Issues](https://github.com/mostage-app/mostage/issues)
 - Create a new issue with detailed description
 - Join discussions in the community
