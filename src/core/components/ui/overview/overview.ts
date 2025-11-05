@@ -360,7 +360,7 @@ export class OverviewManager {
   private createFooter(): HTMLElement {
     const footer = document.createElement("div");
     footer.className = "mostage-overview-footer";
-    footer.innerHTML = `Made with <a href="https://github.com/mirmousaviii/mostage" target="_blank" rel="noopener noreferrer">Mostage</a> v${pkg.version || "1"}`;
+    footer.innerHTML = `Made with <a href="https://mostage.app" target="_blank" rel="noopener noreferrer">Mostage</a> v${pkg.version || "1"}`;
     return footer;
   }
 

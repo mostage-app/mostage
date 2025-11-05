@@ -540,9 +540,7 @@ function slide${i + 1}() {
       // Check GitHub link
       const githubLink = footer?.querySelector("a");
       expect(githubLink).toBeTruthy();
-      expect(githubLink?.getAttribute("href")).toBe(
-        "https://github.com/mirmousaviii/mostage"
-      );
+      expect(githubLink?.getAttribute("href")).toBe("https://mostage.app");
       expect(githubLink?.getAttribute("target")).toBe("_blank");
 
       // Exit overview mode
