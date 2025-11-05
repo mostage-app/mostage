@@ -2,15 +2,18 @@ name: Publish Package
 
 on:
   push:
-    tags:
-      - "v*"
+    branches:
+      - main
 
 permissions:
   contents: write
+  issues: write
   packages: write
+  pull-requests: write
 
 jobs:
   publish:
+    name: Publish
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -28,26 +31,19 @@ jobs:
           registry-url: "https://registry.npmjs.org/"
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build project
         run: npm run build
 
-      - name: Publish to NPM
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --registry=https://registry.npmjs.org/
-
-      - name: Setup Node.js for GitHub Packages
-        uses: actions/setup-node@v5
+      - name: Publish
+        uses: changesets/action@v1
         with:
-          node-version: "22"
-          registry-url: "https://npm.pkg.github.com/"
-
-      - name: Publish to GitHub Packages
+          publish: npm run release
+          version: npx @changesets/cli version
+          commit: "chore: version package"
+          title: "chore: version package"
+          createGithubReleases: true
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          npm pkg set name=@mostage-app/mostage
-          npm publish --registry=https://npm.pkg.github.com/ --access public
-          npm pkg set name=mostage
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
